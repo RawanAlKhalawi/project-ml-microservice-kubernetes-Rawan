@@ -1,0 +1,5 @@
+<paste log output from Kubernetes-mediated prediction, here>
+deployment.apps/rawan created
+NAME                     READY   STATUS              RESTARTS   AGE
+rawan-867c4b6459-xx7dz   0/1     ContainerCreating   0          0s
+service/rawan exposed
