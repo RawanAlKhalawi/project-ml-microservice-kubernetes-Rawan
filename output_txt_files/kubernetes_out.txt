@@ -1,5 +1,72 @@
-<paste log output from Kubernetes-mediated prediction, here>
+
+minikube start
+😄  minikube v1.12.0 on Darwin 10.15.5
+✨  Using the docker driver based on existing profile
+👍  Starting control plane node minikube in cluster minikube
+🏃  Updating the running docker "minikube" container ...
+🐳  Preparing Kubernetes v1.18.3 on Docker 19.03.2 ...
+🔎  Verifying Kubernetes components...
+🌟  Enabled addons: default-storageclass, storage-provisioner
+🏄  Done! kubectl is now configured to use "minikube"
+
+❗  /usr/local/bin/kubectl is version 1.16.6-beta.0, which may be incompatible with Kubernetes 1.18.3.
+💡  You can also use 'minikube kubectl -- get pods' to invoke a matching version
+
+./run_kubernetes.sh
+kubectl run --generator=deployment/apps.v1 is DEPRECATED and will be removed in a future version. Use kubectl run --generator=run-pod/v1 or kubectl create instead.
 deployment.apps/rawan created
 NAME                     READY   STATUS              RESTARTS   AGE
 rawan-867c4b6459-xx7dz   0/1     ContainerCreating   0          0s
 service/rawan exposed
+|-----------|-------|-------------|-------------------------|
+| NAMESPACE | NAME  | TARGET PORT |           URL           |
+|-----------|-------|-------------|-------------------------|
+| default   | rawan |        8000 | http://172.17.0.3:30667 |
+|-----------|-------|-------------|-------------------------|
+🏃  Starting tunnel for service rawan.
+|-----------|-------|-------------|------------------------|
+| NAMESPACE | NAME  | TARGET PORT |          URL           |
+|-----------|-------|-------------|------------------------|
+| default   | rawan |             | http://127.0.0.1:64964 |
+|-----------|-------|-------------|------------------------|
+🎉  Opening service default/rawan in default browser...
+❗  Because you are using a Docker driver on darwin, the terminal needs to be open to run it.
+minikube delete
+
+
+kubectl config view
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: DATA+OMITTED
+    server: https://kubernetes.docker.internal:6443
+  name: docker-desktop
+- cluster:
+    certificate-authority: /Users/rawanalkhalawi/.minikube/ca.crt
+    server: https://127.0.0.1:32772
+  name: minikube
+contexts:
+- context:
+    cluster: docker-desktop
+    user: docker-desktop
+  name: docker-desktop
+- context:
+    cluster: docker-desktop
+    user: docker-desktop
+  name: docker-for-desktop
+- context:
+    cluster: minikube
+    user: minikube
+  name: minikube
+current-context: minikube
+kind: Config
+preferences: {}
+users:
+- name: docker-desktop
+  user:
+    client-certificate-data: REDACTED
+    client-key-data: REDACTED
+- name: minikube
+  user:
+    client-certificate: /Users/rawanalkhalawi/.minikube/profiles/minikube/client.crt
+    client-key: /Users/rawanalkhalawi/.minikube/profiles/minikube/client.key
