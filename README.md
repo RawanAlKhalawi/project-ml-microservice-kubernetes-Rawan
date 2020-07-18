@@ -1,4 +1,4 @@
-<include a CircleCI status badge, here>
+[![RawanAlKhalawi](https://circleci.com/gh/RawanAlKhalawi/project-ml-microservice-kubernetes-Rawan.svg?style=svg)](https://github.com/RawanAlKhalawi/project-ml-microservice-kubernetes-Rawan/tree/master)
 
 ## Project Overview
 
@@ -40,5 +40,3 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 * Setup and Configure Kubernetes locally
 * Create Flask app in Container
 * Run via kubectl
-# project-ml-microservice-kubernetes
-# project-ml-microservice-kubernetes-Rawan
