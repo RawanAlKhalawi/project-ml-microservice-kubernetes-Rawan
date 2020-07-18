@@ -12,4 +12,4 @@ docker image ls
 
 # Step 3: 
 # Run flask app
-docker run -p 8000:80 rawan
+docker run -p 127.0.0.1:8000:80 rawan
