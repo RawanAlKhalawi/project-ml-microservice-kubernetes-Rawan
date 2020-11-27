@@ -17,3 +17,4 @@
 * Setup and Configure Kubernetes locally
 * Create Flask app in Container
 * Run via kubectl
+
